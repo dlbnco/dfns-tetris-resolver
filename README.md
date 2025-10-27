@@ -1,4 +1,4 @@
-# DFNS Tetris Resolver
+# Dfns Tetris Resolver
 
 ## Requirements
 
