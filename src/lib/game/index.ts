@@ -33,10 +33,12 @@ export const processGame = (
   const parsedGame = parseGameString(game);
 
   for (const round of parsedGame) {
+    // each loop = one piece
     const piece = round[0];
     const initialX = round[1];
     const position: Position = [initialX, 0];
     for (let gridY = 0; gridY < height; gridY++) {
+      // each loop = one height unit, goes down the grid
       const [x, y] = position;
       const newY = y + 1;
       if (isColliding(piece, [x, newY], grid)) {
