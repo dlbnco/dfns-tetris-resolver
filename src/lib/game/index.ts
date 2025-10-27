@@ -36,18 +36,17 @@ export const processGame = (
     const piece = round[0];
     const initialX = round[1];
     const position: Position = [initialX, 0];
-    for (let y = 0; y < height; y++) {
+    for (let gridY = 0; gridY < height; gridY++) {
       const [x, y] = position;
       const newY = y + 1;
       if (isColliding(piece, [x, newY], grid)) {
-        continue;
+        break;
       }
       position[1] = newY;
     }
     grid = fillGridWithPiecePosition(piece, position, grid);
     grid = clearRowsIfFilled(grid);
   }
-  grid = clearRowsIfFilled(grid);
   const tallestIndex = grid.findIndex((row) => row.some((cell) => cell === 1));
   if (tallestIndex === -1) return 0;
   return height - tallestIndex;
