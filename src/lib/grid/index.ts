@@ -30,7 +30,6 @@ export const fillGridWithPiecePosition = (
 ): Grid => {
   const [x, y] = position;
   const newGrid = [...grid];
-
   for (const block of piece) {
     const [blockX, blockY] = block;
     newGrid[y + blockY][x + blockX] = 1;
