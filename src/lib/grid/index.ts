@@ -43,10 +43,11 @@ export const fillGridWithPiecePosition = (
  * and create a new empty row at the top.
  */
 export const clearRow = (grid: Grid, index: number): Grid => {
-  const newGrid = [...grid];
-  newGrid.splice(index, 1);
-  newGrid.splice(0, 0, createEmptyRow(grid[0].length));
-  return newGrid;
+  return [
+    createEmptyRow(grid[0].length),
+    ...grid.slice(0, index),
+    ...grid.slice(index + 1),
+  ];
 };
 
 /**
