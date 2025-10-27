@@ -3,12 +3,15 @@
  * Each cell contains a 0 or 1 for either empty or filled states, respectively.
  */
 
-import { Position } from "./collision";
-import { Piece } from "./pieces";
+import { Position } from "../collision";
+import { Piece } from "../pieces";
+
+export const DEFAULT_GRID_WIDTH = 10;
+export const DEFAULT_GRID_HEIGHT = 100;
 
 export type Grid = (0 | 1)[][];
 
-const createEmptyRow = (length: number) => Array(length).fill(0);
+export const createEmptyRow = (length: number) => Array(length).fill(0);
 
 export const createEmptyGrid = (width: number, height: number): Grid =>
   Array(height)
@@ -30,11 +33,6 @@ export const fillGridWithPiecePosition = (
   return newGrid;
 };
 
-export const isFirstRowFilled = (grid: Grid): boolean => {
-  const firstRow = grid[grid.length - 1];
-  return firstRow.every((cell) => cell === 1);
-};
-
 export const clearRow = (grid: Grid, index: number): Grid => {
   const newGrid = [...grid];
   newGrid.splice(index, 1);
@@ -52,8 +50,4 @@ export const clearRowsIfFilled = (grid: Grid): Grid => {
     newGrid = clearRow(newGrid, indicesToClear[i]);
   }
   return newGrid;
-};
-
-export const drawGrid = (grid: Grid): void => {
-  grid.forEach((row) => console.log(row.join(" ")));
 };

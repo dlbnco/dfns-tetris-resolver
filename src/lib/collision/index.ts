@@ -1,5 +1,5 @@
-import { Grid } from "./grid";
-import { Piece } from "./pieces";
+import { Grid } from "../grid";
+import { Piece } from "../pieces";
 
 export type Position = [number, number];
 
