@@ -1,8 +1,11 @@
 import { Grid } from "../grid";
 import { Piece } from "../pieces";
 
-export type Position = [number, number];
-
+/**
+ * Given a piece, its position, and a grid,
+ * determines whether there's a collision
+ * between the piece and existing pieces in the grid.
+ */
 export const isColliding = (
   piece: Piece,
   piecePosition: Position,
@@ -26,3 +29,5 @@ export const isColliding = (
 
   return false;
 };
+
+export type Position = [number, number];

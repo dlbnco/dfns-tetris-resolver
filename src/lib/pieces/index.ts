@@ -4,10 +4,6 @@
  * one row at a time.
  */
 
-export type Piece = Array<[number, number]>;
-
-export type PieceName = "O" | "I" | "S" | "Z" | "L" | "J" | "T";
-
 export const PIECES: Record<PieceName, Piece> = {
   O: [
     [0, 0],
@@ -52,3 +48,7 @@ export const PIECES: Record<PieceName, Piece> = {
     [1, 1],
   ],
 };
+
+export type Piece = Array<[number, number]>;
+
+export type PieceName = "O" | "I" | "S" | "Z" | "L" | "J" | "T";

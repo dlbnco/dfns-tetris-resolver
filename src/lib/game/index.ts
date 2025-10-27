@@ -6,6 +6,10 @@ import {
 } from "../grid";
 import { Piece, PIECES, PieceName } from "../pieces";
 
+/**
+ * Given a game string e.g. "L2,J4,O1,L6,J8",
+ * returns an array of [Piece, number] tuples.
+ */
 export const parseGameString = (game: string): Array<[Piece, number]> => {
   const splitString = game.split(",");
   const parsed: Array<[Piece, number]> = splitString.map((value) => [
@@ -15,6 +19,11 @@ export const parseGameString = (game: string): Array<[Piece, number]> => {
   return parsed;
 };
 
+/**
+ * The game's main logic. Given a game string,
+ * process how the game would play out and return
+ * the maximum height of the remaining blocks in the grid.
+ */
 export const processGame = (
   game: string,
   width: number,
