@@ -4,7 +4,6 @@
   "description": "A Tetris game resolver",
   "license": "ISC",
   "author": "dlbnco <mateus@dlbn.co>",
-  "type": "commonjs",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
