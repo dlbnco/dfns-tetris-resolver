@@ -4,7 +4,8 @@ import { Piece } from "../pieces";
 /**
  * Given a piece, its position, and a grid,
  * determines whether there's a collision
- * between the piece and existing pieces in the grid.
+ * between the piece and existing pieces in the grid,
+ * and the grid itself.
  */
 export const isColliding = (
   piece: Piece,
