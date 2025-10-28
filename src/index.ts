@@ -2,6 +2,11 @@ import * as readline from "readline";
 import { processGame } from "./lib/game";
 import { DEFAULT_GRID_HEIGHT, DEFAULT_GRID_WIDTH } from "./lib/grid";
 
+/**
+ * Reads from each line (game) in STDIN,
+ * calls `processGame` with that line,
+ * and logs the result.
+ */
 const main = async () => {
   const rl = readline.createInterface({
     input: process.stdin,
